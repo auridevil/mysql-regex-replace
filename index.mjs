@@ -12,14 +12,14 @@ const replaceText = (dataRow) => {
 };
 
 const getRowId = (dataRow) => dataRow.ID;
-
+const selectQuery = process.env.SELECT_QUERY;
 const updateRowQuery = (id, updated) =>
   `UPDATE zte.ZTE_ESERCIZI set XML ="${escape(updated)}" WHERE ID=${id}`;
 
 const replace = async () => {
   const connection = await getConnection();
-  console.log("query", process.env.SELECT_QUERY);
-  const data = await connection.query(process.env.SELECT_QUERY);
+  console.log("query", selectQuery);
+  const data = await connection.query(selectQuery);
   console.log("query complete ", data.length);
   await map(data, async (row) => {
     const updated = replaceText(row);
