@@ -1,0 +1,37 @@
+{
+  "extends": "eslint:recommended",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "rules": {
+    "brace-style": [2, "1tbs"],
+    "comma-spacing": [
+      2,
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "computed-property-spacing": [2, "never"],
+    "new-cap": [
+      2,
+      {
+        "capIsNew": false
+      }
+    ],
+    "no-console": [0],
+    "no-multi-spaces": [0],
+    "no-underscore-dangle": [0],
+    "no-constant-condition": [0],
+    "prefer-template": [2],
+    "prefer-arrow-callback": [2],
+    "one-var": [2, "never"],
+    "semi": [2, "always"],
+    "keyword-spacing": [2],
+    "space-before-blocks": [2, "always"],
+    "space-in-parens": [2, "never"],
+    "strict": [2, "never"]
+  }
+}

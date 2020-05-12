@@ -1,0 +1,21 @@
+{
+  "name": "mysql-regex-replace",
+  "version": "0.0.1",
+  "description": "simple mysql data replacer",
+  "scripts": {
+    "lint": "eslint",
+    "start": "cross-env node --experimental-modules index.mjs"
+  },
+  "author": "aureliano bergese",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
+    "promise-mysql": "^4.1.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.0.0",
+    "prettier": "^2.0.5"
+  }
+}

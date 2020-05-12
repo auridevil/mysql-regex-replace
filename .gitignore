@@ -1,0 +1,16 @@
+.env
+.env_dev
+.env_test
+.env_demo
+.env_prod
+lib/
+node_modules/
+npm-debug.log
+coverage/
+.nyc_output/
+log/
+package-lock.json
+yarn-error.log
+.npmrc
+connect.sh
+.DS_STORE
