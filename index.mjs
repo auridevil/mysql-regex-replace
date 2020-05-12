@@ -27,7 +27,8 @@ const replace = async () => {
     await connection.query(updateRowQuery(id, updated));
     console.log("updated ", id);
   });
-  return console.log("completed");
+  console.log("completed");
+  process.exit(0);
 };
 
 replace();
