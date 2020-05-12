@@ -36,7 +36,3 @@ getRowId(dataRow) // return the unique identifier of the row, for the update usa
 ## licensing and use
 
 free to use, see ya at zabriskie point
-
-```
-
-```
