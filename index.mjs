@@ -3,23 +3,20 @@ import { escape, getConnection } from "./mysql.mjs";
 
 const { map } = bluebird;
 
-const replaceText = (dataRow) => {
-  const { XML: xml } = dataRow;
-  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-  return numbers.reduce((acc, num) => {
-    return acc.split(`id="${num}`).join(`id="_${num}`);
-  }, xml);
-};
-
-const getRowId = (dataRow) => dataRow.ID;
-const selectQuery = process.env.SELECT_QUERY;
+/** Variable code */
+const replaceText = (dataRow) => /* replace me */ dataRow.field.toUpperCase();
+const getRowId = (dataRow) => /* replace me */ dataRow.id;
+const selectQuery = () => /* replace me */ process.env.SELECT_QUERY;
 const updateRowQuery = (id, updated) =>
-  `UPDATE zte.ZTE_ESERCIZI set XML ="${escape(updated)}" WHERE ID=${id}`;
+  /* replace me */ `UPDATE table set field ="${escape(
+    updated,
+  )}" WHERE id=${id}`;
 
+/** Stable code - don't touch */
 const replace = async () => {
   const connection = await getConnection();
-  console.log("query", selectQuery);
-  const data = await connection.query(selectQuery);
+  console.log("started, fetching data");
+  const data = await connection.query(selectQuery());
   console.log("query complete ", data.length);
   await map(data, async (row) => {
     const updated = replaceText(row);

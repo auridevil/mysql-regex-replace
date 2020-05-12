@@ -2,7 +2,6 @@ import mysql from "promise-mysql";
 import dotenv from "dotenv";
 dotenv.config();
 
-/* istanbul ignore file */
 const timeout = 60 * 60 * 1000;
 const acquireTimeout = timeout;
 const connectionOptions = {
@@ -15,7 +14,6 @@ const connectionOptions = {
   timeout,
   acquireTimeout,
 };
-console.log(connectionOptions);
 
 export const getConnection = async () =>
   await mysql.createPool(connectionOptions);
