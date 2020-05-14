@@ -2,7 +2,6 @@ import bluebird from "bluebird";
 import { escape, getConnection } from "./mysql.mjs";
 
 const { map } = bluebird;
-
 const replaceText = (dataRow) => {
   const { XML: xml } = dataRow;
   const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
@@ -14,7 +13,7 @@ const replaceText = (dataRow) => {
 const getRowId = (dataRow) => dataRow.ID;
 const selectQuery = process.env.SELECT_QUERY;
 const updateRowQuery = (id, updated) =>
-  `UPDATE zte.ZTE_ESERCIZI set XML ="${escape(updated)}" WHERE ID=${id}`;
+  `UPDATE zte.ZTE_ESERCIZI set XML =${escape(updated)} WHERE ID=${id}`;
 
 const replace = async () => {
   const connection = await getConnection();
